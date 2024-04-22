@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "./button";
+import { Link } from "react-router-dom";
+import { MainContext } from "@/context/ShoppingContext";
 
 export const Header = () => {
-  const [startPage, setStartPage] = useState<boolean>(true);
+  const { startPage, setStartPage } = useContext(MainContext);
 
   const switchPage = (s: boolean) => setStartPage(s);
 
@@ -12,13 +14,13 @@ export const Header = () => {
         className={`font-bold text-3xl  decoration-white ${!startPage ? "text-gray-500" : "text-white underline"}`}
         onClick={() => switchPage(true)}
       >
-        Your Lists
+        <Link to={"/"}>Your Lists</Link>
       </Button>
       <Button
         className={`font-bold text-3xl  ${startPage ? "text-gray-500" : "text-white underline"}`}
         onClick={() => switchPage(false)}
       >
-        Recent Lists
+        <Link to={"/recent"}>Recent Lists</Link>
       </Button>
     </div>
   );

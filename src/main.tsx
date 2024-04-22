@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client";
 import { Root } from "./routes/Root.tsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { ErrorPage } from "@/ErrorPage";
+import { ErrorPage } from "@/routes/ErrorPage.tsx";
 import { CreateList } from "./routes/CreateList.tsx";
 import { StartPage } from "./routes/StartPage.tsx";
+import { RecentLists } from "./routes/RecentLists.tsx";
+import { ShoppingContext } from "./context/ShoppingContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +23,18 @@ const router = createBrowserRouter([
         path: "/create",
         element: <CreateList />,
       },
+      {
+        path: "/recent",
+        element: <RecentLists />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ShoppingContext>
+      <RouterProvider router={router} />
+    </ShoppingContext>
   </React.StrictMode>
 );
