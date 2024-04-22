@@ -1,1 +1,3 @@
-React + TypeScript + Vite + Tailwin + Shadcn Template
+React + TypeScript + Vite + Tailwin + Shadcn
+
+An application made to help with organized grocery shopping!
