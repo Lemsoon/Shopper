@@ -1,6 +1,6 @@
-import { Button } from "./button";
+import { Button } from "../components/button";
 
-export const ContentWindow = () => {
+export const StartPage = () => {
   return (
     <div className="h-screen  flex justify-center items-center">
       <p className="text-3xl text-white">There is nothing here yet...</p>
