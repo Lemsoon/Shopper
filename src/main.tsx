@@ -8,6 +8,7 @@ import { CreateList } from "./routes/CreateList.tsx";
 import { StartPage } from "./routes/StartPage.tsx";
 import { RecentLists } from "./routes/RecentLists.tsx";
 import { ShoppingContext } from "./context/ShoppingContext.tsx";
+import { AddItems } from "./routes/AddItems.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/recent",
         element: <RecentLists />,
+      },
+      {
+        path: "/add_items",
+        element: <AddItems />,
       },
     ],
   },
