@@ -1,9 +1,10 @@
-import { MutableRefObject, useContext, useEffect, useRef } from "react";
+import { MutableRefObject, useContext, useRef } from "react";
 import { Button } from "../components/button";
 import { Input } from "../components/Input";
-import { MdArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { MainContext } from "@/context/ShoppingContext";
+import { v4 as uuid } from "uuid";
+import { BackButtonheader } from "@/components/BackButtonHeader";
 
 export const CreateList = () => {
   const { shoppingListList, setShoppingListList, currentList, setCurrentList } = useContext(MainContext);
@@ -13,21 +14,14 @@ export const CreateList = () => {
   const createNewList = (name: string) => {
     // setShoppingListList([...shoppingListList, name]);
     setCurrentList(listNameInputRef.current!.value);
+    console.log(uuid());
   };
-
-  useEffect(() => {
-    console.log(currentList);
-  }, [currentList]);
 
   return (
     <div className="h-screen flex flex-col">
-      <header className="p-3 flex justify-between">
-        <Link to={"/"}>
-          <MdArrowBackIosNew className="h-8 w-8 text-white" />
-        </Link>
-        <p className="border-red-100 border-solid border-1  text-center text-white text-2xl">Creating a new list</p>
-        <div className="h-8 w-8"></div>
-      </header>
+      <BackButtonheader navTo="/">
+        <p className="text-2xl">Creating a new list</p>
+      </BackButtonheader>
       <div className="w-screen h-[100%] flex justify-center items-center flex-col ">
         <p className="text-white font-semibold text-2xl mb-4">Give your new list a name!</p>
         <Input

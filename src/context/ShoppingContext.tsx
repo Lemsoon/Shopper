@@ -1,8 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
-
-type contextProp = {
-  children: ReactNode;
-};
+import { createContext } from "react";
 
 export const MainContext = createContext<{
   startPage: boolean;
@@ -19,17 +15,3 @@ export const MainContext = createContext<{
   currentList: "",
   setCurrentList: () => {},
 });
-
-export const ShoppingContext = ({ children }: contextProp) => {
-  const [startPage, setStartPage] = useState(true);
-  const [shoppingListList, setShoppingListList] = useState<string[]>([]);
-  const [currentList, setCurrentList] = useState<string>("");
-
-  return (
-    <MainContext.Provider
-      value={{ startPage, setStartPage, shoppingListList, setShoppingListList, currentList, setCurrentList }}
-    >
-      {children}
-    </MainContext.Provider>
-  );
-};

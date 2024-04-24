@@ -7,8 +7,8 @@ import { ErrorPage } from "./routes/ErrorPage.tsx";
 import { CreateList } from "./routes/CreateList.tsx";
 import { StartPage } from "./routes/StartPage.tsx";
 import { RecentLists } from "./routes/RecentLists.tsx";
-import { ShoppingContext } from "./context/ShoppingContext.tsx";
 import { AddItems } from "./routes/AddItems.tsx";
+import { ShoppingContext } from "./context/ContextProvider.tsx";
 
 const router = createBrowserRouter([
   {
