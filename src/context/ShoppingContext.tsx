@@ -21,10 +21,9 @@ export const MainContext = createContext<{
   dispatch: () => null,
 });
 
-export type totalItems = {
-  item: [];
-};
-
 export type initialTotalItems = {
   item: string[];
+};
+export type totalItems = {
+  item: [];
 };

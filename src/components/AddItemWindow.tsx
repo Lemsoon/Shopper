@@ -20,7 +20,7 @@ export const AddItemWindow = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen items-center flex  justify-center">
       {state.item.length > 1 ? (
         state.item.map((item, i) => {
           return <div key={i}>{item}</div>;

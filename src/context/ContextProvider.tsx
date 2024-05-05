@@ -6,8 +6,8 @@ type ContextProps = {
 };
 
 export const ACTION = {
-  ADD: "add",
   REMOVE: "remove",
+  ADD: "add",
 };
 
 export type Action = {
